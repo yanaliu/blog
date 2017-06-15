@@ -1,7 +1,7 @@
 ---
 title: Grunt-beginner
 date: 2017-06-01 21:57:06
-tags: [前端, Grunt, Yeoman, Bower]
+tags: [前端, Grunt, Yeoman, Bower, webpack]
 ---
 
 # 前端集成解决方案
@@ -30,8 +30,9 @@ tags: [前端, Grunt, Yeoman, Bower]
 1. Yeoman
 2. Bower
 3. Grunt | Gulp
+4. webpack
 
-# Yeoman, Bower, Grunt简介和安装
+# Yeoman, Bower, Grunt, webpack简介和安装
 
 ## Yeoman
 
@@ -71,6 +72,22 @@ npm install -g grunt-cli
 ```
 
 安装完成之后，输出grunt会看到一个错误信息，但这也证明grunt已经成功安装。
+
+## webpack
+
+安装：
+
+``` 
+npm install -g generator-react-webpack
+```
+
+检查所有已安装的generator的版本：
+
+``` 
+npm ls -g --depth=1 2>/dev/null | gerp generator-
+```
+
+解释一下这句脚本：npm ls -g列出所有全局已安装的npm包，由于npm包往往会依赖其他的包，所以它是一个树状结构，所以使用--depth=1限制树状结构只显示一层，而2>/dev/null表示将错误信息重定向到空设备文件（bash里，1表示标准输出，2表示标准错误， /dev/null表示空设备文件）。| 表示通道，用于将上一个命令的输出作为下一个命令的输入，grep generator-用于检索generator开头的结果。
 
 # Yeoman实践
 
@@ -120,3 +137,24 @@ bower install bootstrap
 windows用户请到cmd窗口运行bower init命令，在git bash窗口会报错。
 
 # Grunt实践
+
+# webpack
+
+[这里](https://github.com/react-webpack-generators/generator-react-webpack#readme)有webpack的使用命令可以参考。
+
+使用webpack新建项目时，首先新建一个项目目录并进入，然后运行yo react-webpack完成项目的初始化。
+
+``` 
+# Create a new directory, and `cd` into it:
+mkdir my-new-project && cd my-new-project
+
+# Run the generator
+yo react-webpack
+```
+
+运行react-webpack的时候会有一些选项：项目名字，所要使用的语言（css, sacc, scss等）以及是否支持PostCSS，根据自己的需要指定即可。
+
+如果运行时出现“PhantomJS not found on Path”错误，请手工下载[phantomjs-2.1.1-windows.zip](http://download.csdn.net/download/u013934914/9449600) ，并放置到报错时指定的目录，比如我的指定目录是：C:\Users\Administrator\AppData\Local\Temp\phantomjs
+
+项目初始化完成后，输入npm start命令即可运行项目，项目位置为：localhost:8000.
+
