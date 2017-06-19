@@ -10,4 +10,4 @@ date: 2017-05-19 14:00:29
 
 # 网站页面 
 
-<a href="/project/douban" target="_blank" >豆瓣首页</a> <br /><a href="/project/nubia" target="_blank" >努比亚-产品页</a> <br /> <a href="/project/eatWhat/eat.html" target="_blank" >吃啥</a> <br /> <a href="/project/myStory" target="_blank" >照片墙</a> 
+<a href="/project/douban" target="_blank" >豆瓣首页</a> <br /><a href="/project/nubia" target="_blank" >努比亚-产品页</a> <br /> <a href="/project/eatWhat/eat.html" target="_blank" >吃啥</a> <br /> <a href="/project/myStory" target="_blank" >照片墙</a> <br /> <a href="https://yanaliu.github.io/myStoryByReact/" target="_blank" >照片墙(react)</a> 
